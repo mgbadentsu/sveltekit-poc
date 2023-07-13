@@ -1,28 +1,16 @@
 <script lang="ts">
-	import Counter from '$lib/components/Counter.svelte';
-	import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
-	import IconButton from '@smui/icon-button';
+	import PageContent from '$lib/components/PageContent.svelte';
 </script>
 
-<main>
-	<TopAppBar variant="static" color="secondary" prominent={false} dense={false}>
-		<Row>
-			<Section>
-				<IconButton class="material-icons">menu</IconButton>
-				<Title>Field Management</Title>
-			</Section>
-			<Section align="end" toolbar>
-				<IconButton class="material-icons">circle</IconButton>
-				<IconButton class="material-icons">login</IconButton>
-			</Section>
-		</Row>
-	</TopAppBar>
-	<Counter />
-</main>
-
-<style lang="scss">
-	:global(body) {
-		margin: 0;
-		padding: 0;
-	}
-</style>
+<svelte:head>
+	<title>SvelteKit POC</title>
+</svelte:head>
+<PageContent
+	title="This is the home page."
+	subtitle="Layout is consistent for all pages below this route level."
+>
+	<p>
+		All content is displayed by using <code>{'<slot />'}</code> blocks. We can easily
+		create nested layouts with this approach.
+	</p>
+</PageContent>
