@@ -3,8 +3,8 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev": "npm run prepare && vite dev",
+		"build": "npm run prepare && vite build",
 		"preview": "vite preview",
 		"prepare": "npm run css:compile && npm run css:compile-dark ",
 		"css:compile": "npx smui-theme compile static/smui.css -i src/theme",
