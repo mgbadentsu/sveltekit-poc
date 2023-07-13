@@ -28,6 +28,14 @@
 				<IconButton class="material-icons">description</IconButton>
 				<Text>Post</Text>
 			</Item>
+			<Item
+				class="drawer-item"
+				activated={active === '/reactive'}
+				href="/reactive"
+			>
+				<IconButton class="material-icons">bolt</IconButton>
+				<Text>Reactive behavior</Text>
+			</Item>
 		</List>
 	</Content>
 </Drawer>
