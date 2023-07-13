@@ -3,7 +3,7 @@
 	import AppBar from '$lib/components/AppBar.svelte';
 	import Drawer from '$lib/components/Drawer.svelte';
 
-	let open = true;
+	let open = false;
 
 	function toggleDrawer() {
 		open = !open;

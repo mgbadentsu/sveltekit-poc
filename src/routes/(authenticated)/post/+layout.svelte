@@ -7,6 +7,9 @@
 	subtitle="Hey! We have a different layout"
 	variant="unelevated"
 >
-	<p>Try appending <code>{'/anything/you/want'}</code> to the url</p>
+	<p>
+		Try tryping <code>{'/anything/you/want'}</code> in the textfield, then click
+		the navigate button
+	</p>
 	<slot />
 </PageContent>

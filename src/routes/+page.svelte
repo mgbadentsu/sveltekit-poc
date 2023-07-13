@@ -1,10 +1,5 @@
 <script lang="ts">
-	import Button, { Label } from '@smui/button';
 	import PageContent from '$lib/components/PageContent.svelte';
-	import { auth } from '$lib/authStore';
-	function handleAuth() {
-		$auth = !$auth;
-	}
 </script>
 
 <svelte:head>
@@ -18,8 +13,9 @@
 		All content is displayed by using <code>{'<slot />'}</code> blocks. We can easily
 		create nested layouts with this approach.
 	</p>
-	<p>Current auth status: {$auth}</p>
-	<Button variant="raised" on:click={handleAuth}>
-		<Label>{$auth ? 'Logout' : 'Login'}</Label>
-	</Button>
+	<p>
+		Auth information is saved in a store. We can easily share values in a store
+		across the entire application. If you want granular control, you can use
+		contexts (and they can be used alongside stores as well).
+	</p>
 </PageContent>

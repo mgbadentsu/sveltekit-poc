@@ -1,8 +1,13 @@
 <script lang="ts">
 	import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
 	import IconButton from '@smui/icon-button';
-	import Snackbar, { Label, Actions } from '@smui/snackbar';
+	import Button, { Label as ButtonLabel } from '@smui/button';
+	import Snackbar, { Label as SnackbarLabel, Actions } from '@smui/snackbar';
 	import { createEventDispatcher } from 'svelte';
+	import { auth } from '$lib/authStore';
+	function handleAuth() {
+		$auth = !$auth;
+	}
 
 	let snackbar: Snackbar;
 	let snackbarText: string;
@@ -27,6 +32,9 @@
 			<Title>Field Management</Title>
 		</Section>
 		<Section align="end" toolbar>
+			<Button variant="raised" on:click={handleAuth}>
+				<ButtonLabel>{$auth ? 'Logout' : 'Login'}</ButtonLabel>
+			</Button>
 			<IconButton on:click={toggleSnackbar} class="material-icons"
 				>circle</IconButton
 			>
@@ -38,7 +46,7 @@
 </TopAppBar>
 
 <Snackbar bind:this={snackbar}>
-	<Label>Hmm, did you click on the {snackbarText} icon?</Label>
+	<SnackbarLabel>Hmm, did you click on the {snackbarText} icon?</SnackbarLabel>
 	<Actions>
 		<IconButton class="material-icons" title="Dismiss">close</IconButton>
 	</Actions>
