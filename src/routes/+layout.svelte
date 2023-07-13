@@ -3,6 +3,8 @@
 	import AppBar from '$lib/components/AppBar.svelte';
 	import Drawer from '$lib/components/Drawer.svelte';
 
+	export const ssr = false;
+
 	let open = false;
 
 	function toggleDrawer() {
